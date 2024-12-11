@@ -2,8 +2,10 @@ extends CharacterBody3D
 
 
 const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.5
+const LERP_VAL = .15
 
+@onready var armature=$Armature
 @onready var pivot: Node3D = $camOrigin
 @export var sens=0.5
 
@@ -38,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		#armature.rotation.y = lerp_angle(armature.rotation.y, atan2(-velocity.x,-velocity.z),LERP_VAL)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
