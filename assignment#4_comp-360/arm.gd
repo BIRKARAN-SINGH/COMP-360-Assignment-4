@@ -105,8 +105,3 @@ func handle_holding_objects():
 		if heldObject.global_position.distance_to(camera.global_position)> maxDistanceFromCanere:
 			drop_held_object()
 			
-		
-		
-		
-		
-		

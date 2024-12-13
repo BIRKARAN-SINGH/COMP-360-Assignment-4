@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://bumdrshtpqet6"]
+[gd_scene load_steps=36 format=4 uid="uid://bumdrshtpqet6"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7lel8"]
 [ext_resource type="Script" path="res://arm.gd" id="2_xdbyt"]
@@ -97,18 +97,7 @@ bind/8/name = &"ikarmtarget"
 bind/8/bone = -1
 bind/8/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, -4)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lue7s"]
-albedo_color = Color(0.623529, 0.164706, 0.0784314, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_raij8"]
-material = SubResource("StandardMaterial3D_lue7s")
-size = Vector2(1, 1)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o1f0j"]
-data = PackedVector3Array(0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_72uqt"]
-data = PackedVector3Array(0.5, 0, 0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, 0.5, -0.5, 0, -0.5, 0.5, 0, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1w1fv"]
 
 [sub_resource type="Animation" id="Animation_f2fq1"]
 resource_name = "default"
@@ -561,25 +550,15 @@ height = 1.0
 height = 1.0
 radius = 2.4
 
-[sub_resource type="SphereMesh" id="SphereMesh_dr2xt"]
-radius = 0.25
-height = 0.5
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_snpj2"]
-radius = 0.25
-
 [sub_resource type="PrismMesh" id="PrismMesh_onpwa"]
 size = Vector3(55, 10, 5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xnvm5"]
 data = PackedVector3Array(0, 5, 2.5, 27.5, -5, 2.5, -27.5, -5, 2.5, 0, 5, -2.5, -27.5, -5, -2.5, 27.5, -5, -2.5, 0, 5, 2.5, 0, 5, -2.5, 27.5, -5, 2.5, 0, 5, -2.5, 27.5, -5, -2.5, 27.5, -5, 2.5, 0, 5, -2.5, 0, 5, 2.5, -27.5, -5, -2.5, 0, 5, 2.5, -27.5, -5, 2.5, -27.5, -5, -2.5, -27.5, -5, 2.5, 27.5, -5, 2.5, -27.5, -5, -2.5, 27.5, -5, 2.5, 27.5, -5, -2.5, -27.5, -5, -2.5)
 
-[sub_resource type="SphereMesh" id="SphereMesh_lrvsh"]
-radius = 0.25
-height = 0.5
+[sub_resource type="SphereMesh" id="SphereMesh_4l8s2"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_txwxm"]
-radius = 0.4
+[sub_resource type="SphereShape3D" id="SphereShape3D_gpcep"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -591,6 +570,7 @@ transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75
 shadow_enabled = true
 
 [node name="floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.62808, 0, 0, 0, 1, 0, 0, 0, 3.14531, 0, 0, 0)
 mesh = SubResource("PlaneMesh_b8w7v")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="floor"]
@@ -599,7 +579,7 @@ mesh = SubResource("PlaneMesh_b8w7v")
 shape = SubResource("ConcavePolygonShape3D_lrwch")
 
 [node name="arm" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0385797, -0.199905, -0.279326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.57336, -0.199905, -0.279326)
 script = ExtResource("2_xdbyt")
 
 [node name="AnimationTree" type="AnimationTree" parent="arm"]
@@ -622,35 +602,35 @@ bones/1/parent = 0
 bones/1/rest = Transform3D(1, 1.48084e-08, -2.37958e-07, -1.77636e-15, 0.998069, 0.062111, 2.38419e-07, -0.062111, 0.998069, -1.77636e-15, 2.00223, 7.45058e-09)
 bones/1/enabled = true
 bones/1/position = Vector3(-1.77636e-15, 2.00223, 7.45058e-09)
-bones/1/rotation = Quaternion(-0.175909, -9.99763e-08, -3.42382e-08, 0.984406)
+bones/1/rotation = Quaternion(-0.176248, -9.99729e-08, -3.42836e-08, 0.984346)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/name = "arm2"
 bones/2/parent = 1
 bones/2/rest = Transform3D(1, 1.26248e-15, -2.83937e-14, 1.05879e-21, 0.999013, 0.0444195, 2.84217e-14, -0.0444195, 0.999013, 0, 1.00011, 0)
 bones/2/enabled = true
 bones/2/position = Vector3(0, 1.00011, 0)
-bones/2/rotation = Quaternion(-0.456986, -1.20193e-14, -1.66973e-14, 0.889474)
+bones/2/rotation = Quaternion(-0.457123, -1.34675e-14, -3.23317e-15, 0.889404)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/name = "armend"
 bones/3/parent = 2
 bones/3/rest = Transform3D(1, -1.13687e-13, -5.6426e-07, -5.63265e-07, -0.0593598, -0.998237, -3.34942e-08, 0.998237, -0.0593598, 0, 1.00177, 1.67638e-08)
 bones/3/enabled = true
 bones/3/position = Vector3(0, 1.00177, 1.67638e-08)
-bones/3/rotation = Quaternion(0.828019, 5.9009e-08, -2.60579e-07, 0.5607)
+bones/3/rotation = Quaternion(0.827857, 5.92437e-08, -2.60515e-07, 0.560939)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/name = "finger0"
 bones/4/parent = 3
 bones/4/rest = Transform3D(0.707107, -0.707107, -5.06588e-07, -0.707107, -0.707107, -5.02213e-08, -3.227e-07, 3.93724e-07, -1, -2.35287e-15, 5.96046e-08, 1.49198e-10)
 bones/4/enabled = true
 bones/4/position = Vector3(-2.35287e-15, 5.96046e-08, 1.49198e-10)
-bones/4/rotation = Quaternion(0.923124, -0.384501, 0.000855005, -0.000354116)
+bones/4/rotation = Quaternion(0.922992, -0.384818, 0.00100378, -0.000415746)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/name = "finger1"
 bones/5/parent = 3
 bones/5/rest = Transform3D(0.707107, 0.707107, -5.32026e-07, 0.707107, -0.707107, 3.96846e-08, -3.48138e-07, -4.04261e-07, -1, -2.35287e-15, 5.96046e-08, 1.49198e-10)
 bones/5/enabled = true
 bones/5/position = Vector3(-2.35287e-15, 5.96046e-08, 1.49198e-10)
-bones/5/rotation = Quaternion(0.922983, 0.38484, -0.00101473, -0.000420323)
+bones/5/rotation = Quaternion(0.922826, 0.385214, -0.00119123, -0.000493433)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/name = "ikarmpole0"
 bones/6/parent = -1
@@ -670,45 +650,22 @@ bones/8/name = "ikarmtarget"
 bones/8/parent = -1
 bones/8/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 4, 0)
 bones/8/enabled = true
-bones/8/position = Vector3(0, 3.2633, -1.15988)
-bones/8/rotation = Quaternion(-0.940266, 0, 0, 0.340441)
+bones/8/position = Vector3(0, 3.26253, -1.16071)
+bones/8/rotation = Quaternion(-0.940464, 0, 0, 0.339893)
 bones/8/scale = Vector3(1, 1, 1)
 
 [node name="Cube_002" type="MeshInstance3D" parent="arm/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_telrw")
 skin = SubResource("Skin_21ch2")
 
-[node name="Finger1" type="BoneAttachment3D" parent="arm/Armature/Skeleton3D"]
-transform = Transform3D(0.703794, 0.710401, -0.0021963, 0.546412, -0.53935, 0.64073, 0.45399, -0.452142, -0.767763, 2.67096e-11, 3.26399, -1.15972)
-bone_name = "finger1"
-bone_idx = 5
+[node name="RayCast3D" type="RayCast3D" parent="arm/Armature"]
+target_position = Vector3(0, 0, -4)
 
-[node name="Finger1container" type="Node3D" parent="arm/Armature/Skeleton3D/Finger1"]
+[node name="Grab" type="Area3D" parent="arm/Armature"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.804571, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="arm/Armature/Skeleton3D/Finger1/Finger1container"]
-transform = Transform3D(0.00723886, -0.311496, -0.467008, -0.0163265, -1.66461, 0.0863307, -0.260128, 0.0958078, -0.0184143, -0.265649, 0.578243, -0.0738447)
-mesh = SubResource("PlaneMesh_raij8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="arm/Armature/Skeleton3D/Finger1/Finger1container/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="arm/Armature/Skeleton3D/Finger1/Finger1container/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_o1f0j")
-
-[node name="Finger0" type="BoneAttachment3D" parent="arm/Armature/Skeleton3D"]
-transform = Transform3D(0.704316, -0.709884, 0.00185123, -0.54586, -0.539907, 0.640731, -0.453846, -0.452288, -0.767763, 2.67096e-11, 3.26399, -1.15972)
-bone_name = "finger0"
-bone_idx = 4
-
-[node name="Finger0container" type="Node3D" parent="arm/Armature/Skeleton3D/Finger0"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="arm/Armature/Skeleton3D/Finger0/Finger0container"]
-transform = Transform3D(-0.0126693, 0.243705, -0.405346, -0.00286929, -1.33234, -0.0740678, -0.196683, 0.00373841, 0.0271909, 0.288445, 0.586516, -0.0326824)
-mesh = SubResource("PlaneMesh_raij8")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="arm/Armature/Skeleton3D/Finger0/Finger0container/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="arm/Armature/Skeleton3D/Finger0/Finger0container/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_72uqt")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="arm/Armature/Grab"]
+shape = SubResource("BoxShape3D_1w1fv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="arm"]
 libraries = {
@@ -728,14 +685,6 @@ margin = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="arm/camOrigin/SpringArm3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.390287)
-
-[node name="InteractRay" type="RayCast3D" parent="arm/camOrigin/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 0.598604, 0.801045, 0, -0.801045, 0.598604, 0, 0.260644, -0.860439)
-target_position = Vector3(0, 0, -2.5)
-
-[node name="GroundRay" type="RayCast3D" parent="arm/camOrigin/SpringArm3D/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.06678, -0.860439)
-visible = false
 
 [node name="Player" type="CharacterBody3D" parent="."]
 visible = false
@@ -768,6 +717,15 @@ spring_length = 3.0
 margin = 0.5
 
 [node name="Camera3D" type="Camera3D" parent="Player/camOrigin/SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 0.94621, 0.323554, 0, -0.323554, 0.94621, 0, 0.311703, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/camOrigin/SpringArm3D/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.84996)
+target_position = Vector3(0, 0, -3.5)
+
+[node name="Carryobjectmarker" type="Marker3D" parent="Player/camOrigin"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.527184, -3.20804)
 
 [node name="Stage" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.82816, 0.527596, 0)
@@ -778,18 +736,8 @@ mesh = SubResource("CylinderMesh_haic0")
 [node name="CharacterBody3D" type="CollisionShape3D" parent="Stage/StaticBody3D"]
 shape = SubResource("CylinderShape3D_xb5eq")
 
-[node name="ball" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.83574, 0.527596, 0.347838)
-visible = false
-mesh = SubResource("SphereMesh_dr2xt")
-
-[node name="StaticBody3D" type="RigidBody3D" parent="ball"]
-
-[node name="CharacterBody3D" type="CollisionShape3D" parent="ball/StaticBody3D"]
-shape = SubResource("SphereShape3D_snpj2")
-
 [node name="Ramp" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12.0061)
+transform = Transform3D(0.439953, 0, -0.815552, 0, 0.673677, 0, 0.620036, 0, 0.578684, 0, 3.24832, -20.4477)
 mesh = SubResource("PrismMesh_onpwa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ramp"]
@@ -797,13 +745,11 @@ mesh = SubResource("PrismMesh_onpwa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_xnvm5")
 
-[node name="movingball" type="RigidBody3D" parent="."]
-angular_damp = 0.5
+[node name="Ball" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06437, 6.92398, -18.3592)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="movingball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89551, 1.47332, 0)
-mesh = SubResource("SphereMesh_lrvsh")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
+mesh = SubResource("SphereMesh_4l8s2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="movingball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89551, 1.47332, 0)
-shape = SubResource("SphereShape3D_txwxm")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
+shape = SubResource("SphereShape3D_gpcep")
