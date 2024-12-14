@@ -1,125 +1,38 @@
-# COMP-360-Assignment-4
-**Introduction**
+List of Contributions done by all the members of the group.
 
-This project implements a 3D robotic arm simulation with interactive grabbing mechanics using the Godot Engine 4.x. The simulation features realistic arm movements, object interaction physics, and camera controls.
 
-**Project Overview**
+Birkaran Singh
+Setting up Github repo for the assignment.
+Importing the robotic arm.
+Working on the movement of the arm.
+Setting the camera node to robotic arm.
+Setting up animations of robotic arm.
+making the hit area for ball.
+Labels to show instructions on screen.
+Debugging.
+added jump to robo arm.
+Helped fuzail with documentation of code.
+uploading files on git hub repository.
+Completing the README file.
+importing textures to the World environment.
+tried bonefollow3d but dropped 
+made the working of ball grab.
+tried using area 3d to grab ball but dropped.
+used raycast3d to grab ball
+later optimized the project for submission
+tried to work on animations of idle, grab, letgo, pick
+compiled all the files
 
-The simulation demonstrates advanced 3D physics interactions through a robotic arm that can grab, hold, and throw objects in a 3D environment. The project incorporates skeletal animations, rigid body physics, and user input handling.
 
-**Core Features**
+Fuzail Chaugle
+made the documentation for assignment 4
+helped in the compilation of files for submission
+arranged the meetings for the group
 
-**1. Arm Movement and Control**
 
-Fully articulated robotic arm with skeletal animation
-Smooth camera control system with mouse input
-Configurable movement speed and sensitivity
-Jump mechanics with gravity implementation
-
-**2. Object Interaction System**
-
-Dynamic object grabbing and throwing mechanics
-Physics-based object manipulation
-Ray casting for object detection
-Configurable throw force and object following behavior
-
-**3. Animation System**
-
-State-based animation system using AnimationTree
-Smooth transitions between grab and release states
-IK (Inverse Kinematics) target system for arm positioning
-
-**Technical Implementation**
-
-**Movement System**
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 5.5
-const LERP_VAL = .15
-
-**Object Interaction Parameters**
-
-@export var throwForce = 7.5
-
-@export var followSpead = 5.0
-
-@export var followDistance = 2.5
-
-@export var maxDistanceFromCanere = 5.0
-
-**Input Controls**
-
-1. WASD: Movement controls
-2. Mouse: Camera control
-3. X: Grab object
-4. C: Release/throw object
-5. Z: Pick up object
-6. Space: Jump
-7. ESC: Quit application
-
-**Core Components**
-
-**Animation System**
-
-The project utilizes Godot's animation system with the following states:
-
-1. Default
-2. Grab
-3. Idle
-4. Let go        
-5. Pickup
-
-**Physics Integration**
-
-1. Implements gravity and collision detection
-2. Uses RigidBody3D for physical object interactions
-3. Raycasting for object detection and interaction
-
-**Camera System**
-
-func _input(event):
-    if event is InputEventMouseMotion:
-        rotate_y(deg_to_rad(-event.relative.x*sens))
-        pivot.rotate_x(deg_to_rad(-event.relative.y*sens))
-        pivot.rotation.x=clamp(pivot.rotation.x, deg_to_rad(-90), deg_to_rad(45))
-
-# Setup and Configuration
-
-**Prerequisites**
-
-Godot Engine 4.x
-Basic understanding of 3D physics and animation systems
-
-**Project Structure**
-
--node_3d.tscn: Main scene file
-
--arm.gd: Core arm control script
-
--player.gd: Player movement and interaction script
-
--Animation and 3D model resources
-
-**Future Enhancements**
-
--Enhanced physics interactions
-
--Additional arm articulation points
-
--More complex grabbing mechanics
-
--Advanced object manipulation features
-
-**Technical Notes**
-
--The simulation runs on Godot's built-in physics engine
-
--Uses skeletal animation system for arm movement
-
--Implements custom collision detection and response
-
--Features configurable physics parameters for fine-tuning
-
-**Development Process**
-
-The project was developed with a focus on realistic physics interactions and smooth user control, utilizing Godot's built-in physics and animation systems while maintaining performance optimization.
+Ranvir
+Did not contribute to assignment 3 and 4
+Vrinda
+Did not contribute to assignment 3 and 4
+Aaradhya
+Did not contribute to assignment 3 and 4
